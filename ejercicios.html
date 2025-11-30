@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios - Álgebra Accesible</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Ejercicios de Álgebra</h1>
+    </header>
+
+    <nav class="menu">
+       <button class="btn ghost" onclick="window.location.href='teoria.html'">Teoría</button> 
+        <button class="btn ghost" onclick="window.location.href='ejercicios.html'">Ejercicios</button>
+        <button class="btn ghost" onclick="window.location.href='retos.html'">Retos</button>
+
+    </nav>
+
+    <main>
+        <section class="tarjeta">
+            <h2>🔢 Ejercicio 1 — Resolver operaciones básicas</h2>
+            <p>Resuelve las siguientes operaciones:</p>
+            <ul>
+                <li>1) \( 3x + 5x = \)</li>
+                <li>2) \( 7a - 2a = \)</li>
+                <li>3) \( 4m + 3 - m = \)</li>
+            </ul>
+            <button class="btn-audio" onclick="leerTexto('Ejercicio 1. Resuelve operaciones básicas: uno, tres equis más cinco equis. Dos, siete a menos dos a. Tres, cuatro eme más tres menos eme.')">🔊 Leer en voz alta</button>
+        </section>
+
+        <section class="tarjeta">
+            <h2>📘 Ejercicio 2 — Simplificación de expresiones</h2>
+            <p>Simplifica las expresiones:</p>
+            <ul>
+                <li>1) \( 2(x + 3) \)</li>
+                <li>2) \( 5(2y - 1) \)</li>
+                <li>3) \( 3(x - 4) + 2x \)</li>
+            </ul>
+            <button class="btn-audio" onclick="leerTexto('Ejercicio 2. Simplificación de expresiones: uno, dos por abre paréntesis, equis más tres. Dos, cinco por abre paréntesis, dos ye menos uno. Tres, tres por abre paréntesis, equis menos cuatro, más dos equis.')">🔊 Leer en voz alta</button>
+        </section>
+
+        <section class="tarjeta">
+            <h2>🧠 Ejercicio 3 — Ecuaciones sencillas</h2>
+            <p>Encuentra el valor de la incógnita:</p>
+            <ul>
+                <li>1) \( x + 3 = 10 \)</li>
+                <li>2) \( 2y = 14 \)</li>
+                <li>3) \( m - 5 = 11 \)</li>
+            </ul>
+            <button class="btn-audio" onclick="leerTexto('Ejercicio 3. Ecuaciones sencillas: uno, equis más tres igual a diez. Dos, dos ye igual a catorce. Tres, eme menos cinco igual a once.')">🔊 Leer en voz alta</button>
+        </section>
+
+        <section class="tarjeta">
+            <h2>🎯 Ejercicio extra — Problema verbal</h2>
+            <p>Si tienes <strong>x</strong> manzanas y compras 7 más, y al final te quedan 15,<br>
+                ¿cuántas manzanas tenías al inicio?</p>
+
+            <button class="btn-audio" onclick="leerTexto('Ejercicio extra. Problema verbal: si tienes equis manzanas y compras siete más, y al final tienes quince, ¿cuántas tenías al principio?')">🔊 Leer en voz alta</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aplicación de Álgebra Accesible — Diseñada para inclusión y facilidad de lectura</p>
+    </footer>
+
+    <script>
+        function leerTexto(texto) {
+            const speech = new SpeechSynthesisUtterance(texto);
+            speech.lang = "es-MX";
+            speech.rate = 1;
+            speech.pitch = 1;
+            speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
