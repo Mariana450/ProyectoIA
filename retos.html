@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos de Álgebra</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   <header>
+      <div class="brand">
+        <div class="logo">A+</div>
+        <div>
+          <h1>Álgebra Fácil</h1>
+          <p>Practica, aprende y domina álgebra con ejercicios interactivos</p>
+        </div>
+      </div>
+
+      <nav>
+        <button class="btn ghost" onclick="window.location.href='index.html'">Inicio</button>
+        <button class="btn ghost" onclick="window.location.href='teoria.html'">Teoría</button> 
+        <button class="btn ghost" onclick="window.location.href='ejercicios.html'">Ejercicios</button>
+        <button class="btn ghost" onclick="window.location.href='retos.html'">Retos</button>
+        <button class="btn" id="access-btn">Modo accesible</button>
+  
+
+      </nav>
+    </header>
+
+
+       <main>
+
+    <!-- Vista de selección -->
+    <section class="retos-container vista-activa" id="vista-retos">
+        <h2 class="titulo-principal">Elige tu reto</h2>
+
+        <div class="grid-retos">
+            <div class="tarjeta-reto">
+                <h3>🔥 Nivel 1</h3>
+                <p>Operaciones básicas.</p>
+                <button onclick="iniciarReto(1)" class="btn-reto">Comenzar</button>
+            </div>
+
+            <div class="tarjeta-reto">
+                <h3>⚡ Nivel 2</h3>
+                <p>Ecuaciones lineales.</p>
+                <button onclick="iniciarReto(2)" class="btn-reto">Comenzar</button>
+            </div>
+
+            <div class="tarjeta-reto">
+                <h3>🌟 Nivel 3</h3>
+                <p>Factorización.</p>
+                <button onclick="iniciarReto(3)" class="btn-reto">Comenzar</button>
+            </div>
+
+            <div class="tarjeta-reto">
+                <h3>🏆 Contrarreloj</h3>
+                <p>60 segundos. Da lo mejor.</p>
+                <button onclick="iniciarContrarreloj()" class="btn-reto">Iniciar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vista del juego -->
+    <section id="juego" class="oculto vista-juego">
+        <div class="card-juego">
+            <h2 id="titulo-reto"></h2>
+            <p id="instrucciones" class="instrucciones"></p>
+
+            <div id="problema" class="area-problema"></div>
+
+            <input type="text" id="respuesta" class="input-respuesta" placeholder="Tu respuesta…">
+
+            <button onclick="verificarRespuesta()" class="btn-responder">Verificar</button>
+
+<div class="contenedor-nav-juego">
+    <button class="btn-nav" onclick="reiniciar()">⟵ Regresar</button>
+    <button class="btn-nav" onclick="window.location.href='index.html'">Salir</button>
+</div>
+
+
+            <div class="barra-info">
+                <span id="tiempo"></span>
+                <span id="puntaje"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vista de resultados -->
+    <section id="resultado" class="oculto vista-resultado">
+        <div class="card-resultado">
+            <h2>Resultado</h2>
+            <p id="mensaje-final"></p>
+            <button onclick="reiniciar()" class="btn-volver">Volver</button>
+        </div>
+    </section>
+
+</main>
+
+
+<script src="js/accesibilidad.js"></script>
+    <script src="js/retos.js"></script>
+</body>
+</html>

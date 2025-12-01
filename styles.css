@@ -1,0 +1,590 @@
+:root{
+      --bg:#0f1720;
+      --card:#0f2620;
+      --muted:#9aa6a0;
+      --accent:#2fbf7f;
+      --accent-2:#7fe7b2;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --glass-2: rgba(47,191,127,0.08);
+      font-family: Inter, ui-sans-serif, system-ui;
+    }
+
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 24px auto;
+    padding: 12px 0;
+}
+
+.menu a {
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-2);
+    background: var(--glass);
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.menu a:hover {
+    background: var(--accent);
+    color: #042217;
+}
+
+.menu .activo {
+    background: var(--accent-2);
+    color: #042217;
+    border-color: var(--accent);
+}
+
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    .pressed {
+    transform: scale(0.92);
+    filter: brightness(1.3);
+    transition: 0.15s;
+}
+
+/* MODO ACCESIBLE */
+body.accesible {
+    font-size: 22px !important;
+    line-height: 1.6 !important;
+}
+
+
+body.accessible button {
+    border: 4px solid #00ff99;
+    box-shadow: 0 0 12px #00ff99;
+    font-size: 1.3rem;
+}
+
+    body{
+      margin:0;
+      background: linear-gradient(180deg, #071016 0%, #082422 60%);
+      color:#e6f3ef;
+      padding:28px;
+      transition: font-size 0.3s ease;
+    }
+
+    /* 🔵 MODO ACCESIBLE (Aumenta 40% la fuente) */
+    .accessible-mode {
+      font-size: 1.4em;
+    }
+
+    .container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+
+    header{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;color:#052017;font-size:20px;box-shadow:0 6px 18px rgba(47,191,127,0.12)}
+    .brand h1{margin:0;font-size:18px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+
+    nav{display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--accent);cursor:pointer;font-weight:600}
+    .btn.ghost{color:var(--muted)}
+
+    .hero{
+      background:linear-gradient(180deg, rgba(127,231,178,0.04), rgba(0,0,0,0.02));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 6px 24px rgba(2,18,13,0.45);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .hero h2{margin:0 0 6px 0;font-size:22px}
+    .hero p{margin:0 0 18px 0;color:var(--muted);line-height:1.5}
+
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042217;padding:10px 16px;border-radius:12px;border:none;cursor:pointer;font-weight:700}
+    .secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 16px;border-radius:12px;cursor:pointer}
+
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .feature{background:var(--glass);padding:12px;border-radius:12px;border:1px solid var(--glass-2);min-height:80px}
+    .feature h4{margin:0 0 6px 0;font-size:14px}
+    .feature p{margin:0;color:var(--muted);font-size:13px}
+
+    .side{position:relative}
+    .card{background:linear-gradient(180deg,#071e17 0%, #092d22 100%);border-radius:14px;padding:16px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,16,12,0.5)}
+    .card h3{margin:0 0 10px 0}
+
+    .practice-list{display:flex;flex-direction:column;gap:10px}
+    .problem{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px dashed rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center}
+    .problem small{color:var(--muted)}
+    .solve{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;color:var(--accent);cursor:pointer}
+
+    footer{grid-column:1/-1;margin-top:22px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:980px){
+      .container{grid-template-columns:1fr; padding:0 8px}
+      .side{order:2}
+    }
+
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+/* =====================================
+   🎯 MODO ACCESIBLE UNIFICADO
+   ===================================== */
+
+body.accessible {
+    background: #f4f7f5 !important;
+    color: #1a3128 !important;
+    font-size: 1.35rem !important;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+/* Botones visibles y grandes */
+body.accessible button,
+body.accessible .btn,
+body.accessible nav button,
+body.accessible .ghost {
+    background: #3b9f6b !important;
+    color: #ffffff !important;
+    padding: 18px 28px !important;
+    font-size: 1.3rem !important;
+    border-radius: 14px !important;
+    border: 3px solid #2d8f5c !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15) !important;
+}
+
+/* Hover accesible */
+body.accessible .btn:hover,
+body.accessible nav button:hover,
+body.accessible button:hover {
+    background: #2d8f5c !important;
+}
+
+/* Texto general */
+body.accessible p,
+body.accessible h1,
+body.accessible h2,
+body.accessible h3,
+body.accessible h4,
+body.accessible small {
+    color: #1a3128 !important;
+}
+
+/* Tarjetas de contenido: teoría, ejercicio, actividades */
+body.accessible .tarjeta,
+body.accessible .pregunta,
+body.accessible .actividad,
+body.accessible .evaluacion,
+body.accessible .feature,
+body.accessible .problem,
+body.accessible .card {
+    background: #ffffff !important;
+    border: 2px solid #cfe8dd !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+}
+
+
+
+
+/* Opciones de ejercicios */
+body.accessible .opcion {
+    background: #e6f6ef !important;
+    border-color: #b9decf !important;
+    color: #1a3128 !important;
+}
+
+body.accessible .opcion:hover {
+    background: #3b9f6b !important;
+    color: #fff !important;
+}
+
+/* Menú superior accesible */
+body.accessible header,
+body.accessible .menu {
+    background: #eaf5ef !important;
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Logo accesible */
+body.accessible .logo {
+    background: #3b9f6b !important;
+    color: #ffffff !important;
+    box-shadow: 0px 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ==============================
+   🔥 FIX UNIVERSAL PARA RETOS
+   ============================== */
+
+body.accessible .tarjeta-reto {
+    background: #ffffff !important;
+    border-left-color: #3b9f6b !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+}
+
+body.accessible .tarjeta-reto h3 {
+    color: #1a3128 !important;
+}
+
+body.accessible .tarjeta-reto p {
+    color: #1a3128 !important;
+}
+
+body.accessible .tarjeta-reto button {
+    background: #3b9f6b !important;
+    color: #ffffff !important;
+    font-size: 1.35rem !important;
+    padding: 18px !important;
+}
+body.accessible .card-juego{
+    background: #ffffff !important;
+    border-left-color: #3b9f6b !important;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12) !important;
+}
+
+
+body.accessible .card-juego h3 {
+    color: #1a3128 !important;
+}
+
+body.accessible .card-juego p {
+  color: #1a3128 !important;
+}
+
+body.accessible .card-juego button {
+    background: #3b9f6b !important;
+    color: #ffffff !important;
+    font-size: 1.35rem !important;
+    padding: 18px !important;
+}
+
+
+/* Menú superior accesible */
+body.accessible header,
+body.accessible .menu {
+    background: #eaf5ef !important;
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* Logo ajustado para accesibilidad */
+body.accessible .logo {
+    background: #3b9f6b !important;
+    color: #ffffff !important;
+    box-shadow: 0px 6px 14px rgba(0,0,0,0.15);
+}
+
+/* ================================
+   ESTILOS PARA TEORÍA Y EJERCICIOS
+   ================================ */
+/* 📘 TARJETAS DE CONTENIDO */
+.tarjeta {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 18px auto;
+    width: 90%;
+    border: 1px solid var(--glass-2);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.3);
+}
+
+.tarjeta h2, 
+.tarjeta h3 {
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.tarjeta p {
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.tarjeta ul {
+    margin-left: 20px;
+    color: var(--muted);
+}
+
+/* 🔊 BOTÓN DE AUDIO */
+.btn-audio {
+    background: var(--accent);
+    color: #042217;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 12px;
+    transition: 0.25s;
+}
+
+.btn-audio:hover {
+    filter: brightness(1.15);
+}
+
+/* 📖 CONTENIDO GENERAL */
+.contenido {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* 🟩 SECCIONES */
+.seccion {
+    margin: 20px 0;
+}
+
+.titulo-seccion {
+    font-size: 22px;
+    color: var(--accent-2);
+    margin-bottom: 8px;
+}
+
+/* 📝 EJERCICIOS (LISTA DE PROBLEMAS) */
+.pregunta {
+    background: var(--glass);
+    border: 1px solid var(--glass-2);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.opcion {
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid var(--glass-2);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.opcion:hover {
+    background: var(--accent-2);
+    color: #042217;
+}
+
+/* 🟨 EVALUACIÓN */
+.evaluacion {
+    background: var(--glass);
+    border: 1px solid var(--glass-2);
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 18px;
+}
+
+/* 🟣 ACTIVIDADES */
+.actividad {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    margin: 16px 0;
+    border: 1px solid var(--glass-2);
+}
+/* -------- PALETA VERDE BONITA -------- */
+:root {
+    --verde-primario: #4CAF50;
+    --verde-oscuro: #3b8e40;
+    --verde-claro: #040404;
+    --verde-pastel: #dce380;
+    --texto-oscuro: #1a1a1a;
+    --morado-suave: #6A5ACD;
+}
+
+/* -----------------------------------
+      TARJETAS DE RETOS
+----------------------------------- */
+
+.retos-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.tarjeta-reto {
+    background: var(--card);
+    margin: 18px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: var(--radius);
+    border-left: 10px solid var(--accent);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.35);
+}
+
+.tarjeta-reto h3 {
+    margin: 0;
+    color: var(--accent-2);
+}
+
+.tarjeta-reto button {
+    margin-top: 10px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #042217;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.tarjeta-reto button:hover {
+    filter: brightness(1.12);
+}
+
+
+
+/* -----------------------------------
+      JUEGO CENTRADO
+----------------------------------- */
+
+#juego {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card);
+    width: 90%;
+    max-width: 480px;
+    padding: 25px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+    border-top: 12px solid var(--accent);
+}
+
+.problema {
+    font-size: 2.4rem;
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--glass);
+    border-radius: var(--radius);
+    font-weight: bold;
+    color: var(--accent-2);
+}
+
+#respuesta {
+    width: 90%;
+    padding: 13px;
+    font-size: 1.3rem;
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: #0f1d1c;
+    color: var(--accent-2);
+}
+
+#juego button {
+    width: 90%;
+    padding: 12px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #042217;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.contenedor-nav-juego {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn-nav {
+    width: 45%;
+    background: var(--accent);
+    border-radius: 10px;
+    padding: 10px;
+    color: #042217;
+    font-weight: 700;
+}
+
+
+
+
+/* -----------------------------------
+      RESULTADO
+----------------------------------- */
+
+#resultado {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--card);
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: var(--radius);
+    text-align: center;
+    border-top: 12px solid var(--accent);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+}
+
+.btn-volver {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    padding: 12px;
+    width: 90%;
+    border-radius: 12px;
+    color: #042217;
+    border: none;
+    font-weight: 700;
+}
+
+
+
+/* -----------------------------------
+      OCULTAR SECCIONES
+----------------------------------- */
+.oculto {
+    display: none !important;
+}
+/* =====================================
+   MODO ACCESIBLE - FIX PARA VISTA JUEGO
+===================================== */
+
+
+/* Títulos y textos dentro del juego */
+body.accesible #juego h2,
+body.accesible #juego p,
+body.accesible #problema {
+    color: #000 !important;
+}
+
+/* Input accesible */
+body.accesible #respuesta {
+    background-color: #fff !important;
+    color: #000 !important;
+    border: 3px solid #000 !important;
+    font-size: 22px !important;
+}
+
+/* Botones dentro del juego */
+body.accesible .btn-responder,
+body.accesible .btn-nav {
+    background-color: #FFD900 !important; /* Amarillo accesible */
+    color: #000 !important;
+    font-size: 22px !important;
+    padding: 18px !important;
+}
+.selector-modos {
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid #444;
+    background: #f5f5f5;
+}
+body.accessible .selector-modos {
+    background: #fff !important;
+    color: #000 !important;
+}
+body.autista .selector-modos {
+    background: #dce8ff !important;
+    color: #000 !important;
+}
